@@ -9,8 +9,16 @@ jobs:
     strategy:
       matrix:
         params:
+          - 'central-fed-district-latest.osm.pbf/central-fed-district'
+          - 'crimean-fed-district-latest.osm.pbf/crimean-fed-district'
+          - 'far-eastern-fed-district-latest.osm.pbf/far-eastern-fed-district'
+          - 'north-caucasus-fed-district-latest.osm.pbf/north-caucasus-fed-district'
+          - 'northwestern-fed-district-latest.osm.pbf/northwestern-fed-district'
+          - 'siberian-fed-district-latest.osm.pbf/siberian-fed-district'
+          - 'south-fed-district-latest.osm.pbf/south-fed-district'
+          - 'ural-fed-district-latest.osm.pbf/ural-fed-district'
+          - 'volga-fed-district-latest.osm.pbf/volga-fed-district'
           - 'kaliningrad-latest.osm.pbf/kaliningrad'
-          - 'crimean-fed-district-latest.osm.pbf/crimean'
     steps:
       - name: Checkout
         uses: actions/checkout@v2

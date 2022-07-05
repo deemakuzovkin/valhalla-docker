@@ -17,6 +17,7 @@ jobs:
         uses: docker/setup-qemu-action@v1
       - name: Get env from matrix
         run: |
+          mkdir -p custom_files
           MATRIX=${{matrix.params}}
           MATRIX_FILE=${MATRIX%/*}
           MATRIX_TAG=${MATRIX#*/}

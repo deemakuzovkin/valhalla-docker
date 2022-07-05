@@ -25,7 +25,7 @@ jobs:
       - name: Make dir
         run: mkdir -p custom_files
       - name: Dowload data file
-        run: wget https://download.geofabrik.de/russia/$MATRIX_FILE -O /custom_files/$MATRIX_FILE
+        run: wget https://download.geofabrik.de/russia/$MATRIX_FILE -O custom_files/$MATRIX_FILE
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - name: Login to GitHub Container Registry

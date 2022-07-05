@@ -41,7 +41,5 @@ jobs:
           file: Dockerfile
           platforms: linux/amd64
           push: true
-          build-args: |
-            OSM_FILE=$MATRIX_FILE
-          tags: |
-            ghcr.io/deemakuzovkin/valhalla-docker:"$MATRIX_TAG"
+          build-args: OSM_FILE=$MATRIX_FILE
+          tags: ghcr.io/deemakuzovkin/valhalla-docker:$MATRIX_TAG

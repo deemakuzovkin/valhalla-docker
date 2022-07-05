@@ -1,13 +1,13 @@
-# Valhalla create docker images
+# Valhalla docker images
 
 # Use
 
----
 ```shell
   docker pull ghcr.io/deemakuzovkin/valhalla-docker: $TAG
 ```
 
 ## Regions ($Tag)
+
 * Central Federal District (**central-fed-district**)
 * Crimean Federal District (**crimean**)
 * Far Eastern Federal District (**far-eastern-fed-district**)
@@ -17,3 +17,4 @@
 * South Federal District (**south-fed-district**)
 * Ural Federal District (**ural-fed-district**)
 * Volga Federal District (**volga-fed-district**)
+* Kaliningrad (**kaliningrad**)

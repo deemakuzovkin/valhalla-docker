@@ -4,21 +4,22 @@ on:
     branches:
       - main
 jobs:
-  docker:
+  russia:
+    name: russia
     runs-on: ubuntu-latest
     strategy:
       matrix:
         params:
-          - 'central-fed-district-latest.osm.pbf/central-fed-district'
-          - 'crimean-fed-district-latest.osm.pbf/crimean-fed-district'
-          - 'far-eastern-fed-district-latest.osm.pbf/far-eastern-fed-district'
-          - 'north-caucasus-fed-district-latest.osm.pbf/north-caucasus-fed-district'
-          - 'northwestern-fed-district-latest.osm.pbf/northwestern-fed-district'
-          - 'siberian-fed-district-latest.osm.pbf/siberian-fed-district'
-          - 'south-fed-district-latest.osm.pbf/south-fed-district'
-          - 'ural-fed-district-latest.osm.pbf/ural-fed-district'
-          - 'volga-fed-district-latest.osm.pbf/volga-fed-district'
-          - 'kaliningrad-latest.osm.pbf/kaliningrad'
+          - central-fed-district-latest.osm.pbf/central-fed-district
+          - crimean-fed-district-latest.osm.pbf/crimean-fed-district
+          - far-eastern-fed-district-latest.osm.pbf/far-eastern-fed-district
+          - north-caucasus-fed-district-latest.osm.pbf/north-caucasus-fed-district
+          - northwestern-fed-district-latest.osm.pbf/northwestern-fed-district
+          - siberian-fed-district-latest.osm.pbf/siberian-fed-district
+          - south-fed-district-latest.osm.pbf/south-fed-district
+          - ural-fed-district-latest.osm.pbf/ural-fed-district
+          - volga-fed-district-latest.osm.pbf/volga-fed-district
+          - kaliningrad-latest.osm.pbf/kaliningrad
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -34,7 +35,7 @@ jobs:
       - name: Make dir
         run: mkdir -p custom_files
       - name: Dowload data file
-        run: wget https://download.geofabrik.de/russia/$MATRIX_FILE -O custom_files/$MATRIX_FILE
+        run: wget https://download.geofabrik.de/${{ github.job }}/$MATRIX_FILE -O custom_files/$MATRIX_FILE
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - name: Login to GitHub Container Registry

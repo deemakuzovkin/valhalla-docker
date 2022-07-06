@@ -167,6 +167,82 @@ jobs:
       - name: Make dir
         run: mkdir -p custom_files
       - name: Dowload data file
+        run: wget https://download.geofabrik.de/$MATRIX_FILE -O custom_files/$MATRIX_FILE
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: Dockerfile
+          platforms: linux/amd64
+          push: true
+          build-args: OSM_FILE=${{ env.MATRIX_FILE }}
+          tags: ghcr.io/deemakuzovkin/valhalla-docker:${{ env.MATRIX_TAG }}
+  asia:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        params:
+          - afghanistan-latest.osm.pbf/afghanistan
+          - armenia-latest.osm.pbf/armenia
+          - azerbaijan-latest.osm.pbf/azerbaijan
+          - bangladesh-latest.osm.pbf/bangladesh
+          - bhutan-latest.osm.pbf/bhutan
+          - cambodia-latest.osm.pbf/cambodia
+          - china-latest.osm.pbf/china
+          - east-timor-latest.osm.pbf/east-timor
+          - gcc-states-latest.osm.pbf/gcc-states
+          - india-latest.osm.pbf/india
+          - indonesia-latest.osm.pbf/indonesia
+          - iran-latest.osm.pbf/iran
+          - iraq-latest.osm.pbf/iraq
+          - israel-and-palestine-latest.osm.pbf/israel-and-palestine
+          - japan-latest.osm.pbf/japan
+          - jordan-latest.osm.pbf/jordan
+          - kazakhstan-latest.osm.pbf/kazakhstan
+          - kyrgyzstan-latest.osm.pbf/kyrgyzstan
+          - laos-latest.osm.pbf/laos
+          - lebanon-latest.osm.pbf/lebanon
+          - malaysia-singapore-brunei-latest.osm.pbf/malaysia-singapore-brunei
+          - maldives-latest.osm.pbf/maldives
+          - mongolia-latest.osm.pbf/mongolia
+          - myanmar-latest.osm.pbf/myanmar
+          - nepal-latest.osm.pbf/nepal
+          - north-korea-latest.osm.pbf/north-korea
+          - pakistan-latest.osm.pbf/pakistan
+          - philippines-latest.osm.pbf/philippines
+          - south-korea-latest.osm.pbf/south-korea
+          - sri-lanka-latest.osm.pbf/sri-lanka
+          - syria-latest.osm.pbf/syria
+          - taiwan-latest.osm.pbf/taiwan
+          - tajikistan-latest.osm.pbf/tajikistan
+          - thailand-latest.osm.pbf/thailand
+          - turkmenistan-latest.osm.pbf/turkmenistan
+          - uzbekistan-latest.osm.pbf/uzbekistan
+          - vietnam-latest.osm.pbf/vietnam
+          - yemen-latest.osm.pbf/yemen
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Get env from matrix
+        run: |
+          MATRIX=${{matrix.params}}
+          MATRIX_FILE=${MATRIX%/*}
+          MATRIX_TAG=${MATRIX#*/}
+          echo "MATRIX_FILE=$MATRIX_FILE" >> $GITHUB_ENV
+          echo "MATRIX_TAG=$MATRIX_TAG" >> $GITHUB_ENV
+      - name: Make dir
+        run: mkdir -p custom_files
+      - name: Dowload data file
         run: wget https://download.geofabrik.de/${{ github.job }}/$MATRIX_FILE -O custom_files/$MATRIX_FILE
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1

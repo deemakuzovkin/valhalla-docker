@@ -83,5 +83,46 @@ Routing engine for open street map in docker container by tag.
 * [Zambia](https://github.com/users/deemakuzovkin/packages/container/valhalla-docker/27705410?tag=zambia)
 * [Zimbabwe](https://github.com/users/deemakuzovkin/packages/container/valhalla-docker/27705402?tag=zimbabwe)
 
+## [Antarctica]()
 
+## Asia
+
+* [Afghanistan]
+* [Armenia]
+* [Azerbaijan]
+* [Bangladesh]
+* [Bhutan]
+* [Cambodia]
+* [China]
+* [East Timor]
+* [GCC States]
+* [India]
+* [Indonesia (with East Timor)]
+* [Iran]
+* [Iraq]
+* [Israel and Palestine]
+* [Japan]
+* [Jordan]
+* [Kazakhstan]
+* [Kyrgyzstan]
+* [Laos]
+* [Lebanon]
+* [Malaysia, Singapore, and Brunei]
+* [Maldives]
+* [Mongolia]
+* [Myanmar (a.k.a. Burma)]
+* [Nepal]
+* [North Korea]
+* [Pakistan]
+* [Philippines]
+* [South Korea]
+* [Sri Lanka]
+* [Syria]
+* [Taiwan]
+* [Tajikistan]
+* [Thailand]
+* [Turkmenistan]
+* [Uzbekistan]
+* [Vietnam]
+* [Yemen]
 

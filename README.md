@@ -1,19 +1,26 @@
 # Valhalla docker images
-```shell
-  docker pull ghcr.io/deemakuzovkin/valhalla-docker:$Tag
+[25]: https://github.com/deemakuzovkin/valhalla-docker/pkgs/container/valhalla-docker
+
+## Container launch
+
+``` bash 
+  docker run -d -it --name valhalla ghcr.io/deemakuzovkin/valhalla-docker:$Tag
 ```
+
+
+
 ## Russian
 
-* Central Federal District (**central-fed-district**)
-* Crimean Federal District (**crimean**)
-* Far Eastern Federal District (**far-eastern-fed-district**)
-* North Caucasus Federal District (**north-caucasus-fed-district**)
-* Northwestern Federal District (**northwestern-fed-district**)
-* Siberian Federal District (**siberian-fed-district**)
-* South Federal District (**south-fed-district**)
-* Ural Federal District (**ural-fed-district**)
-* Volga Federal District (**volga-fed-district**)
-* Kaliningrad (**kaliningrad**)
+* [Central Federal District]([25]/27662074?tag=central-fed-district)
+* [Crimean Federal District](https://github.com/deemakuzovkin/valhalla-docker/pkgs/container/valhalla-docker/27631053?tag=crimean)
+* Far Eastern Federal District
+* North Caucasus Federal District
+* Northwestern Federal District
+* Siberian Federal District
+* South Federal District
+* Ural Federal District
+* Volga Federal District
+* Kaliningrad
 
 ## Africa
 
@@ -72,3 +79,6 @@
 * Uganda
 * Zambia
 * Zimbabwe
+
+
+

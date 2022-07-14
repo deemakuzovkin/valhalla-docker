@@ -10,7 +10,7 @@ jobs:
       matrix:
         params:
           - central-fed-district-latest.osm.pbf/central-fed-district
-          - crimean-fed-district-latest.osm.pbf/crimean-fed-district
+          - crimean-fed-district-latest.osm.pbf/crimea
           - far-eastern-fed-district-latest.osm.pbf/far-eastern-fed-district
           - north-caucasus-fed-district-latest.osm.pbf/north-caucasus-fed-district
           - northwestern-fed-district-latest.osm.pbf/northwestern-fed-district

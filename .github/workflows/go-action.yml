@@ -51,7 +51,7 @@ jobs:
           platforms: linux/amd64
           push: true
           build-args: OSM_FILE=${{ env.MATRIX_FILE }}
-          tags: ghcr.io/deemakuzovkin/valhalla-docker/${{ env.MATRIX_TAG }}:latests
+          tags: ghcr.io/deemakuzovkin/valhalla-docker/${{ env.MATRIX_TAG }}:latest
   africa:
     runs-on: ubuntu-latest
     strategy:
@@ -145,7 +145,7 @@ jobs:
           platforms: linux/amd64
           push: true
           build-args: OSM_FILE=${{ env.MATRIX_FILE }}
-          tags: ghcr.io/deemakuzovkin/valhalla-docker/${{ env.MATRIX_TAG }}:latests
+          tags: ghcr.io/deemakuzovkin/valhalla-docker/${{ env.MATRIX_TAG }}:latest
   antarctica:
     runs-on: ubuntu-latest
     strategy:
@@ -184,7 +184,7 @@ jobs:
           platforms: linux/amd64
           push: true
           build-args: OSM_FILE=${{ env.MATRIX_FILE }}
-          tags: ghcr.io/deemakuzovkin/valhalla-docker/${{ env.MATRIX_TAG }}:latests
+          tags: ghcr.io/deemakuzovkin/valhalla-docker/${{ env.MATRIX_TAG }}:latest
   asia:
     runs-on: ubuntu-latest
     strategy:
@@ -260,4 +260,4 @@ jobs:
           platforms: linux/amd64
           push: true
           build-args: OSM_FILE=${{ env.MATRIX_FILE }}
-          tags: ghcr.io/deemakuzovkin/valhalla-docker/${{ env.MATRIX_TAG }}:latests
+          tags: ghcr.io/deemakuzovkin/valhalla-docker/${{ env.MATRIX_TAG }}:latest

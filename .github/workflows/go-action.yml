@@ -261,3 +261,92 @@ jobs:
           push: true
           build-args: OSM_FILE=${{ env.MATRIX_FILE }}
           tags: ghcr.io/deemakuzovkin/valhalla-docker/${{ env.MATRIX_TAG }}:latest
+  europe:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        params:
+          - albania-latest.osm.pbf/albania
+          - andorra-latest.osm.pbf/andorra
+          - austria-latest.osm.pbf/austria
+          - azores-latest.osm.pbf/azores
+          - belarus-latest.osm.pbf/belarus
+          - belgium-latest.osm.pbf/belgium
+          - bosnia-herzegovina-latest.osm.pbf/bosnia-herzegovina
+          - bulgaria-latest.osm.pbf/bulgaria
+          - croatia-latest.osm.pbf/croatia
+          - cyprus-latest.osm.pbf/cyprus
+          - czech-republic-latest.osm.pbf/czech-republic
+          - denmark-latest.osm.pbf/denmark
+          - estonia-latest.osm.pbf/estonia
+          - faroe-islands-latest.osm.pbf/faroe-islands
+          - finland-latest.osm.pbf/finland
+          - france-latest.osm.pbf/france
+          - georgia-latest.osm.pbf/georgia
+          - germany-latest.osm.pbf/germany
+          - great-britain-latest.osm.pbf/great-britain
+          - greece-latest.osm.pbf/greece
+          - guernsey-jersey-latest.osm.pbf/guernsey-jersey
+          - hungary-latest.osm.pbf/hungary
+          - iceland-latest.osm.pbf/iceland
+          - ireland-and-northern-ireland-latest.osm.pbf/ireland-and-northern-ireland
+          - isle-of-man-latest.osm.pbf/isle-of-man
+          - italy-latest.osm.pbf/italy
+          - kosovo-latest.osm.pbf/kosovo
+          - latvia-latest.osm.pbf/latvia
+          - liechtenstein-latest.osm.pbf/liechtenstein
+          - lithuania-latest.osm.pbf/lithuania
+          - luxembourg-latest.osm.pbf/luxembourg
+          - macedonia-latest.osm.pbf/macedonia
+          - malta-latest.osm.pbf/malta
+          - moldova-latest.osm.pbf/moldova
+          - monaco-latest.osm.pbf/monaco
+          - montenegro-latest.osm.pbf/montenegro
+          - netherlands-latest.osm.pbf/netherlands
+          - norway-latest.osm.pbf/norway
+          - poland-latest.osm.pbf/poland
+          - portugal-latest.osm.pbf/portugal
+          - romania-latest.osm.pbf/romania
+          - serbia-latest.osm.pbf/serbia
+          - slovakia-latest.osm.pbf/slovakia
+          - spain-latest.osm.pbf/spain
+          - sweden-latest.osm.pbf/sweden
+          - switzerland-latest.osm.pbf/switzerland
+          - turkey-latest.osm.pbf/turkey
+          - ukraine-latest.osm.pbf/ukraine
+          - alps-latest.osm.pbf/alps
+          - britain-and-ireland-latest.osm.pbf/britain-and-ireland
+          - dach-latest.osm.pbf/dach
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Get env from matrix
+        run: |
+          MATRIX=${{matrix.params}}
+          MATRIX_FILE=${MATRIX%/*}
+          MATRIX_TAG=${MATRIX#*/}
+          echo "MATRIX_FILE=$MATRIX_FILE" >> $GITHUB_ENV
+          echo "MATRIX_TAG=$MATRIX_TAG" >> $GITHUB_ENV
+      - name: Make dir
+        run: mkdir -p custom_files
+      - name: Dowload data file
+        run: wget https://download.geofabrik.de/${{ github.job }}/$MATRIX_FILE -O custom_files/$MATRIX_FILE
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: Dockerfile
+          platforms: linux/amd64
+          push: true
+          build-args: OSM_FILE=${{ env.MATRIX_FILE }}
+          tags: ghcr.io/deemakuzovkin/valhalla-docker/${{ env.MATRIX_TAG }}:latest

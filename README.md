@@ -5,11 +5,13 @@ Routing engine for open street map in docker container by tag.
 [![Go](https://github.com/deemakuzovkin/valhalla-docker/actions/workflows/go-action.yml/badge.svg)](https://github.com/deemakuzovkin/valhalla-docker/actions/workflows/go-action.yml)
 ![Platform](https://img.shields.io/badge/platform-Linux-blue)
 ![GitHub contributors](https://img.shields.io/github/contributors/deemakuzovkin/valhalla-docker)
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/deemakuzovkin/valhalla-docker">
 
 ## Container launch
+### [Search](https://github.com/deemakuzovkin?tab=packages&repo_name=valhalla-docker) image in tags
 
 ``` bash 
-  docker run -d -it --name valhalla ghcr.io/deemakuzovkin/valhalla-docker:$Tag
+  docker run -d -it --name valhalla ghcr.io/deemakuzovkin/valhalla-docker/$Tag
 ```
 
 ## Russian
@@ -87,42 +89,96 @@ Routing engine for open street map in docker container by tag.
 
 ## Asia
 
-* [Afghanistan]
-* [Armenia]
-* [Azerbaijan]
-* [Bangladesh]
-* [Bhutan]
-* [Cambodia]
-* [China]
-* [East Timor]
-* [GCC States]
-* [India]
-* [Indonesia (with East Timor)]
-* [Iran]
-* [Iraq]
-* [Israel and Palestine]
-* [Japan]
-* [Jordan]
-* [Kazakhstan]
-* [Kyrgyzstan]
-* [Laos]
-* [Lebanon]
-* [Malaysia, Singapore, and Brunei]
-* [Maldives]
-* [Mongolia]
-* [Myanmar (a.k.a. Burma)]
-* [Nepal]
-* [North Korea]
-* [Pakistan]
-* [Philippines]
-* [South Korea]
-* [Sri Lanka]
-* [Syria]
-* [Taiwan]
-* [Tajikistan]
-* [Thailand]
-* [Turkmenistan]
-* [Uzbekistan]
-* [Vietnam]
-* [Yemen]
+* [Afghanistan]()
+* [Armenia]()
+* [Azerbaijan]()
+* [Bangladesh]()
+* [Bhutan]()
+* [Cambodia]()
+* [China]()
+* [East Timor]()
+* [GCC States]()
+* [India]()
+* [Indonesia (with East Timor)]()
+* [Iran]()
+* [Iraq]()
+* [Israel and Palestine]()
+* [Japan]()
+* [Jordan]()
+* [Kazakhstan]()
+* [Kyrgyzstan]()
+* [Laos]()
+* [Lebanon]()
+* [Malaysia, Singapore, and Brunei]()
+* [Maldives]()
+* [Mongolia]()
+* [Myanmar (a.k.a. Burma)]()
+* [Nepal]()
+* [North Korea]()
+* [Pakistan]()
+* [Philippines]()
+* [South Korea]()
+* [Sri Lanka]()
+* [Syria]()
+* [Taiwan]()
+* [Tajikistan]()
+* [Thailand]()
+* [Turkmenistan]()
+* [Uzbekistan]()
+* [Vietnam]()
+* [Yemen]()
 
+## Europe
+
+* [Albania]()
+* [Andorra]()
+* [Austria]()
+* [Azores]()
+* [Belarus]()
+* [Belgium]()
+* [Bosnia-Herzegovina]()
+* [Bulgaria]()
+* [Croatia]()
+* [Cyprus]()
+* [Czech Republic]()
+* [Denmark]()
+* [Estonia]()
+* [Faroe Islands]()
+* [Finland]()
+* [France]()
+* [Georgia]()
+* [Germany]()
+* [Great Britain]()
+* [Greece]()
+* [guernsey-jersey]()
+* [Hungary]()
+* [Iceland]()
+* [Ireland and Northern Ireland]()
+* [Isle of Man]()
+* [Italy]()
+* [Kosovo]()
+* [Latvia]()
+* [Liechtenstein]()
+* [Lithuania]()
+* [Luxembourg]()
+* [Macedonia]()
+* [Malta]()
+* [Moldova]()
+* [Monaco]()
+* [Montenegro]()
+* [Netherlands]()
+* [Norway]()
+* [Poland]()
+* [Portugal]()
+* [Romania]()
+* [Serbia]()
+* [Slovakia]()
+* [Slovenia]()
+* [Spain]()
+* [Sweden]()
+* [Switzerland]()
+* [Turkey]()
+* [Ukraine (with Crimea)]()
+* [Alps]()
+* [Britain and Ireland]()
+* [Germany, Austria, Switzerland]()
